@@ -1,0 +1,10 @@
+<div *ngIf="dataLoaded == false" class="text-center">
+  <div class="spinner-border text-dark" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<ul *ngIf="dataLoaded == true" class="list-group">
+    <li class="list-group-item active" aria-current="true">Markalar</li>
+    <li *ngFor="let brand of brands" class="list-group-item">{{brand.brandName}}</li>
+ 
+  </ul>

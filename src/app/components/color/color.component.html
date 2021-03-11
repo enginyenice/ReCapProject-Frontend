@@ -1,0 +1,10 @@
+<div *ngIf="dataLoaded == false" class="text-center">
+  <div class="spinner-border text-dark" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<ul *ngIf="dataLoaded == true" class="list-group">
+    <li class="list-group-item active" aria-current="true">Renkler</li>
+    <li *ngFor="let color of colors" class="list-group-item">{{color.colorName}}</li>
+ 
+  </ul>
