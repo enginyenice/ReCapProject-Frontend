@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from 'src/app/models/customer';
-import { CustomerService } from 'src/app/services/customer.service';
+import { Customer } from 'src/app/models/customer/customer';
+import { CustomerService } from 'src/app/services/customer/customer.service';
 
 @Component({
   selector: 'app-customer',
