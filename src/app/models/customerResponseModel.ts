@@ -1,7 +1,6 @@
 import { Customer } from "./customer";
+import { ResponseModel } from "./responseModel";
 
-export interface CustomerResponseModel{
-    data:Customer[],
-    message:String,
-    success:Boolean
+export interface CustomerResponseModel  extends ResponseModel{
+    data:Customer[]
 }
