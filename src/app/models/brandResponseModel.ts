@@ -1,6 +1,7 @@
 import { Brand } from "./brand";
-import { ResponseModel } from "./responseModel";
 
-export interface BrandResponseModel  extends ResponseModel{
+export interface BrandResponseModel{
+    success:Boolean,
+    message:String,
     data: Brand[]
 }
