@@ -1,7 +1,6 @@
 import { Rental } from "./rental";
+import { ResponseModel } from "./responseModel";
 
-export interface RentalResponseModel{
-    data:Rental[],
-    message:String,
-    success:Boolean
+export interface RentalResponseModel extends ResponseModel{
+    data:Rental[]
 }
