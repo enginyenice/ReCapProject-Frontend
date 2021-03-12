@@ -31,7 +31,9 @@
               "bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {

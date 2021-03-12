@@ -1,27 +1,32 @@
-<h2 class="text-center">Kiralık Araç Listesi</h2>
-
-<div *ngIf="dataLoaded == false" class="text-center">
-    <div class="spinner-border text-dark text-center" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-</div>
-<table class="table" *ngIf="dataLoaded == true">
-<thead>
-    <tr>
-        <th>Marka</th>
-        <th>Renk</th>
-        <th>Müşteri</th>
-        <th>Kiralama Tarihi</th>
-        <th>Teslim Alma Tarihi</th>
-    </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let rental of rentals">
-        <td>{{rental.brandName}}</td>
-        <td>{{rental.colorName}}</td>
-        <td>{{rental.firstName +" "+ rental.lastName}}</td>
-        <td>{{rental.rentDate | date:'dd-MM-YYYY'}}</td>
-        <td>{{(rental.returnDate == null)? "Teslim Alınmadı": rental.returnDate | date:'dd-MM-YYYY'}}</td>
-    </tr>
-</tbody>
-</table>
+<div class="card mb-2">
+    <div class="card-header text-center">
+        <strong>Kiralık Araç Listesi</strong>
+    </div>
+    <div class="card-body">
+        <div *ngIf="dataLoaded == false" class="text-center">
+            <div class="spinner-border text-dark text-center" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </div>
+        <table class="table table-hover table-bordered" *ngIf="dataLoaded == true">
+            <thead>
+                <tr>
+                    <th>Marka</th>
+                    <th>Renk</th>
+                    <th>Müşteri</th>
+                    <th>Kiralama Tarihi</th>
+                    <th>Teslim Alma Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rental of rentals">
+                    <td>{{rental.brandName}}</td>
+                    <td>{{rental.colorName}}</td>
+                    <td>{{rental.firstName +" "+ rental.lastName}}</td>
+                    <td>{{rental.rentDate | date:'dd-MM-YYYY'}}</td>
+                    <td>{{(rental.returnDate == null)? "Teslim Alınmadı": rental.returnDate | date:'dd-MM-YYYY'}}</td>
+                </tr>
+            </tbody>
+            </table>
+    </div>
+  </div>
