@@ -18,6 +18,6 @@ Kiralamaları listeleyiniz (Rentals) CarId yerine BrandName, CustomerId yerine F
 Kodlarınızı githuba aktarıp paylaşınız.
 
 
-![Top](https://i.hizliresim.com/NbbgKA.png)
-![Bottom](https://i.hizliresim.com/mFPyOq.png)
+![Top](https://i.hizliresim.com/YipTUq.png)
+![Bottom](https://i.hizliresim.com/PIUSvD.png)
 
