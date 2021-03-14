@@ -35,7 +35,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "bootstrap/dist/js/bootstrap.min.js"
+              "bootstrap/dist/js/bootstrap.min.js",
+              "jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {

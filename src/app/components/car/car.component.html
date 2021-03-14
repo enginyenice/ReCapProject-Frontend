@@ -26,7 +26,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let car of cars">
+        <tr routerLink="/cars/car-detail/{{car.carId}}" *ngFor="let car of cars">
             <td>{{car.carId}}</td>
             <td>{{car.colorName}}</td>
             <td>{{car.brandName}}</td>

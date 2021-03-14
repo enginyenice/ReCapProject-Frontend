@@ -11,10 +11,20 @@ import { environment } from 'src/environments/environment';
 export class CarService {
 
 
-    apiUrl = environment.apiUrl +'cars/getcarsdetail';
+    
     constructor(private httpClient:HttpClient) { }
   
     getCar():Observable<ListResponseModel<Car>>{
-      return this.httpClient.get<ListResponseModel<Car>>(this.apiUrl);
+      let newPath = environment.apiUrl +'cars/getcarsdetail';
+      return this.httpClient.get<ListResponseModel<Car>>(newPath);
+    }
+    getCarByBrand(brandId:Number):Observable<ListResponseModel<Car>>{
+      let newPath = environment.apiUrl +`cars/getbybrand?brandid=${brandId}`;
+      return this.httpClient.get<ListResponseModel<Car>>(newPath);
+    }
+    getCarByColor(colorId:Number):Observable<ListResponseModel<Car>>{
+      console.log("service",colorId)
+      let newPath = environment.apiUrl +`cars/getbycolor?colorid=${colorId}`;
+      return this.httpClient.get<ListResponseModel<Car>>(newPath);
     }
 }

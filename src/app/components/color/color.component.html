@@ -4,7 +4,15 @@
     </div>
 </div>
 <ul *ngIf="dataLoaded == true" class="list-group">
-    <li class="list-group-item active" aria-current="true">Renkler</li>
-    <li *ngFor="let color of colors" class="list-group-item">{{color.colorName}}</li>
+    <li 
+    routerLink="/cars"
+    (click)="removeCurrentColor()"
+    [ngClass]="getAllCurrentColorClass()" aria-current="true">Renkler</li>
+    <li
+    (click)="setCurrentColor(color)"
+    [ngClass]="getCurrentColorClass(color)"
+    routerLink="/cars/color/{{color.id}}"
+    *ngFor="let color of colors">
+    {{color.colorName}}</li>
  
   </ul>

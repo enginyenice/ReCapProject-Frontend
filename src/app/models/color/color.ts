@@ -3,6 +3,6 @@
       "colorName": "Siyah"
 */
 export interface Color{
- id:Number,
+ id:Number
  colorName:String
 }
