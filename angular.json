@@ -32,7 +32,8 @@
             ],
             "styles": [
               "bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "ngx-toastr/toastr.css"
             ],
             "scripts": [
               "bootstrap/dist/js/bootstrap.min.js",

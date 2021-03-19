@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Brand } from 'src/app/models/brand/brand';
 import { BrandService } from 'src/app/services/brand/brand.service';
 
@@ -11,6 +11,7 @@ export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   currentBrand: Brand =  {id:-1,brandName:""};
   dataLoaded = false;
+  filterText:String;
   constructor(private brandService: BrandService) { }
 
   ngOnInit(): void {
@@ -18,7 +19,7 @@ export class BrandComponent implements OnInit {
   }
 
   getBrands(){
-    this.brandService.getBrands().subscribe(response => {
+      this.brandService.getBrands().subscribe(response => {
       this.brands = response.data;
       this.dataLoaded = true;
     })
@@ -27,6 +28,7 @@ export class BrandComponent implements OnInit {
     this.currentBrand = brand;
   }
   removeCurrentBrand(){
+    this.filterText = "";
     this.currentBrand = {id:-1,brandName:""};
   }
   getCurrentBrandClass(brand:Brand){

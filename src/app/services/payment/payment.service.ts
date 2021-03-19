@@ -5,18 +5,15 @@ import { Rental } from 'src/app/models/rental/rental';
 import { ResponseModel } from 'src/app/models/responseModel';
 import { environment } from 'src/environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class RentalService {
-  
-  constructor(private httpClient:HttpClient) { }
+export class PaymentService {
 
-  /*
-  rentalCar(rental:Rental):Observable<ResponseModel>{
-    let path = environment.apiUrl+"rentals/add";
-      return this.httpClient.post<ResponseModel>(path,rental);
+  constructor(private httpClient:HttpClient) { }
+  pay(rental:Rental,amount:Number):Observable<ResponseModel>{
+    let path = environment.apiUrl+"rentals/paymentadd";
+    rental.returnDate = undefined;
+    return this.httpClient.post<ResponseModel>(path,{payment:{amount:amount},rental:rental});
   }
-  */
 }

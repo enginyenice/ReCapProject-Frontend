@@ -23,8 +23,11 @@ export class CarService {
       return this.httpClient.get<ListResponseModel<Car>>(newPath);
     }
     getCarByColor(colorId:Number):Observable<ListResponseModel<Car>>{
-      console.log("service",colorId)
       let newPath = environment.apiUrl +`cars/getbycolor?colorid=${colorId}`;
+      return this.httpClient.get<ListResponseModel<Car>>(newPath);
+    }
+    getCarByBrandAndColor(brandId:Number,colorId:Number):Observable<ListResponseModel<Car>>{
+      let newPath = environment.apiUrl +`cars/getbybrandandcolor?brandId=${brandId}&colorid=${colorId}`;
       return this.httpClient.get<ListResponseModel<Car>>(newPath);
     }
 }

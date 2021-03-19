@@ -3,16 +3,28 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
-<ul *ngIf="dataLoaded == true" class="list-group">
-  <li 
-  routerLink="/cars" 
-  [ngClass]="getAllBrandClass()" 
-  (click)="removeCurrentBrand()"
-  aria-current="true">Tüm markalar</li>
 
-  <li 
-  routerLink="/cars/brand/{{brand.id}}"
-  (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" [ngClass]="getCurrentBrandClass(brand)">
-    {{brand.brandName}}
+<div class="mb-3">
+  <label for="filterText" class="form-label">Marka Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control"
+  placeholder="marka">
+</div>
+<ul *ngIf="dataLoaded == true" class="list-group">
+  <li
+    routerLink="/cars"
+    [ngClass]="getAllBrandClass()"
+    (click)="removeCurrentBrand()"
+    aria-current="true"
+  >
+    Tüm markalar
+  </li>
+
+  <li
+    routerLink="/cars/brand/{{ brand.id }}"
+    (click)="setCurrentBrand(brand)"
+    *ngFor="let brand of brands | filterBrand:filterText"
+    [ngClass]="getCurrentBrandClass(brand)"
+  >
+    {{ brand.brandName }}
   </li>
 </ul>

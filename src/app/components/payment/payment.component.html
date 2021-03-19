@@ -1,0 +1,95 @@
+<div class="card mt-4">
+  <div class="card-header text-center">
+    <strong>İşlem Özeti</strong>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Başlangıç</th>
+          <th>Bitiş</th>
+          <th>Marka</th>
+          <th>Renk</th>
+          <th>Model Yılı</th>
+          
+          <th>Günlük</th>
+          <th>Toplam</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{rental.rentDate}}</td>
+          <td>{{rental.returnDate}}</td>
+          <td>{{carDetail.car.brandName}}</td>
+          <td>{{carDetail.car.colorName}}</td>
+          <td>{{carDetail.car.modelYear}}</td>
+          <td>{{carDetail.car.dailyPrice | currency:"₺"}}</td>
+          <td><strong class="text-danger">{{amountOfPayment | currency:"₺"}}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<div class="card mt-4">
+  <div class="card-header text-center">
+    <strong>Ödeme İşlemlemi</strong>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="inputbox mt-3">
+        <span>Kart sahibinin adı soyadı</span>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          required="required"
+        />
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="inputbox mt-3 mr-2">
+            <span>Kart numarası</span>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              required="required"
+            />
+            <i class="fa fa-credit-card"></i>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex flex-row">
+            <div class="inputbox mt-3 mr-2">
+              <span>Son kullanım tarihi</span>
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                required="required"
+              />
+            </div>
+            <div class="inputbox mt-3 mr-2">
+              <span>Güvenlik kodu</span>
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                required="required"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="card-footer">
+    <div class="row">
+        <button (click)="pay()" class="btn btn-success"><strong>{{amountOfPayment |currency:"₺"}} </strong>Ödeme Yap</button>
+    </div>
+</div>
+</div>
