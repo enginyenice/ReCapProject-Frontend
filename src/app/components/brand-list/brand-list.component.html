@@ -1,0 +1,23 @@
+<div class="content">
+  <div class="card">
+    <div class="card-header">Marka Listesi</div>
+    <div class="card-body">
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>İsim</th>
+                    <th>Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of brands">
+                    <td>{{item.id}}</td>
+                    <td>{{item.brandName}}</td>
+                    <td><a routerLink="/brand/update/{{item.id}}" class="btn btn-warning">Düzenle</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

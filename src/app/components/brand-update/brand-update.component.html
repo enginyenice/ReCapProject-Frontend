@@ -1,0 +1,26 @@
+<div class="content mt-2">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">Marka Düzenle </div>
+        <div class="card-body">
+          <form [formGroup]="brandUpdateForm">
+            <div class="form-group">
+                <label for="brandName">Marka Adı</label>
+              <input
+                class="form-control"
+                type="text"
+                id="brandName"
+                formControlName="brandName"
+                placeholder="Marka adı"
+                value="{{brand.brandName}}"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-fill btn-success" (click)="update()">Değiştir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

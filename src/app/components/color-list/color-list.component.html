@@ -1,0 +1,24 @@
+<div class="content">
+    <div class="card">
+      <div class="card-header">Marka Listesi</div>
+      <div class="card-body">
+          <table class="table table-responsive table-bordered table-hover">
+              <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>İsim</th>
+                      <th>Düzenle</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of colors">
+                      <td>{{item.id}}</td>
+                      <td>{{item.colorName}}</td>
+                      <td><button class="btn btn-warning">Düzenle</button></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+  
