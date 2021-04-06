@@ -1,8 +1,8 @@
 import { CarImage } from "../carImage/carImage";
-import { Car } from "./car";
+import { CarDto } from "./carDto";
 
 export interface CarDetailAndImagesDto{
-        car:Car,
+        car:CarDto,
         carImages:CarImage[]
         
 }

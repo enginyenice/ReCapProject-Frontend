@@ -1,17 +1,17 @@
 <div class="content mt-2">
     <div class="col-md-12" *ngIf="dataLoaded == true">
       <div class="card">
-        <div class="card-header">Marka Düzenle </div>
+        <div class="card-header">Renk Düzenle </div>
         <div class="card-body">
-          <form [formGroup]="brandUpdateForm">
+          <form [formGroup]="colorUpdateForm">
             <div class="form-group">
-                <label for="brandName">Marka Adı</label>
+                <label for="colorName">Renk Adı</label>
               <input
                 class="form-control"
                 type="text"
-                id="brandName"
-                formControlName="brandName"
-                placeholder="{{brand.brandName}}"               
+                id="colorName"
+                formControlName="colorName"
+                placeholder="{{color.colorName}}"               
               />
             </div>
           </form>

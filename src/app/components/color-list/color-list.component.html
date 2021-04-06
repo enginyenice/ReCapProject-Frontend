@@ -14,7 +14,7 @@
                   <tr *ngFor="let item of colors">
                       <td>{{item.id}}</td>
                       <td>{{item.colorName}}</td>
-                      <td><button class="btn btn-warning">Düzenle</button></td>
+                      <td><a routerLink="/color/update/{{item.id}}" class="btn btn-warning">Düzenle</a></td>
                   </tr>
               </tbody>
           </table>

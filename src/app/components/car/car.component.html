@@ -1,42 +1,46 @@
-<div class="card mb-2">
-    <div class="card-header text-center">
-       <strong>Araç Listesi</strong>
+<div class="content">
+    <div class="col col-md-12">
+        <div class="card mb-2">
+            <div class="card-header text-center">
+               <strong>Araç Listesi</strong>
+            </div>
+            <div class="card-body">
+           
+            
+        <div *ngIf="dataLoaded == false" class="text-center">
+            <div class="spinner-border text-dark text-center" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </div>  
+        <app-car-filter></app-car-filter>
+        <table *ngIf="dataLoaded == true" class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Araç No</th>
+                    <th>Renk</th>
+                    <th>Marka</th>
+                    <th>Model</th>
+                    <th>Günlük Ücret</th>
+                    <th>Açıklama</th>
+                    <th>Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr routerLink="/cars/car-detail/{{car.carId}}" *ngFor="let car of cars">
+                    <td>{{car.carId}}</td>
+                    <td>{{car.colorName}}</td>
+                    <td>{{car.brandName}}</td>
+                    <td>{{car.modelYear}}</td>
+                    <td>{{car.dailyPrice}} ₺</td>
+                    <td>{{car.description}}</td>
+                    <td><a routerLink="/car/update/{{car.carId}}" class="btn btn-warning">Düzenle</a></td>
+                </tr>
+            </tbody>
+            </table>
+            </div>
+          </div>
     </div>
-    <div class="card-body">
-   
-    
-<div *ngIf="dataLoaded == false" class="text-center">
-    <div class="spinner-border text-dark text-center" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-</div>  
-<app-car-filter></app-car-filter>
-<table *ngIf="dataLoaded == true" class="table table-hover table-bordered">
-    <thead>
-        <tr>
-            <th>Araç No</th>
-            <th>Renk</th>
-            <th>Marka</th>
-            <th>Model</th>
-            <th>Günlük Ücret</th>
-            <th>Açıklama</th>
-            <th>Düzenle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr routerLink="/cars/car-detail/{{car.carId}}" *ngFor="let car of cars">
-            <td>{{car.carId}}</td>
-            <td>{{car.colorName}}</td>
-            <td>{{car.brandName}}</td>
-            <td>{{car.modelYear}}</td>
-            <td>{{car.dailyPrice}} ₺</td>
-            <td>{{car.description}}</td>
-            <td><button class="btn btn-warning">Düzenle</button></td>
-        </tr>
-    </tbody>
-    </table>
-    </div>
-  </div>
+</div>
 
 
 

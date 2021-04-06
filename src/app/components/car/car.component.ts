@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Brand } from 'src/app/models/brand/brand';
-import { Car } from 'src/app/models/car/car';
+import { CarDto } from 'src/app/models/car/carDto';
 import { CarService } from 'src/app/services/car/car.service';
 import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 
 export class CarComponent implements OnInit {
-cars : Car[] = [];
+cars : CarDto[] = [];
 brands: Brand[] = [];
 dataLoaded = false;
   constructor(
@@ -47,7 +47,7 @@ dataLoaded = false;
     
   }
   getCar(){
-    this.carService.getCar().subscribe(response => {
+    this.carService.getCars().subscribe(response => {
       this.cars = response.data,
       this.dataLoaded = true
     })

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Car } from 'src/app/models/car/car';
+import { CarDto } from 'src/app/models/car/carDto';
 import { Rental } from 'src/app/models/rental/rental';
 import { Customer } from 'src/app/models/customer/customer';
 import { CustomerService } from 'src/app/services/customer/customer.service';
@@ -19,7 +19,7 @@ export class RentalComponent implements OnInit {
   customerId:Number;
   rentDate:Date;
   returnDate:Date;
-  @Input() car:Car;
+  @Input() car:CarDto;
   ngOnInit(): void {
     this.getCustomer();
   }

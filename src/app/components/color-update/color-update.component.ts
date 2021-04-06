@@ -2,49 +2,51 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Brand } from 'src/app/models/brand/brand';
-import { BrandService } from 'src/app/services/brand/brand.service';
+import { Color } from 'src/app/models/color/color';
+import { ColorService } from 'src/app/services/color/color.service';
 
 @Component({
-  selector: 'app-brand-update',
-  templateUrl: './brand-update.component.html',
-  styleUrls: ['./brand-update.component.css'],
+  selector: 'app-color-update',
+  templateUrl: './color-update.component.html',
+  styleUrls: ['./color-update.component.css']
 })
-export class BrandUpdateComponent implements OnInit {
+export class ColorUpdateComponent implements OnInit {
+
   constructor(
     private formBuilder: FormBuilder,
-    private brandService: BrandService,
+    private colorService: ColorService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService
-  ) {}
-  brandUpdateForm: FormGroup;
-  brand:Brand;
+  ) { }
+  colorUpdateForm: FormGroup;
+  color:Color
   dataLoaded = false;
   ngOnInit(): void {
+
     this.activatedRoute.params.subscribe((params) => {
-      if (params['brandId']) {
-        this.getBrand(params['brandId']);
-        this.createBrandUpdateForm();
+      if (params['colorId']) {
+        this.getColor(params['colorId']);
+        this.createColorUpdateForm();
       }
     });
   }
-
-  createBrandUpdateForm() {
-    this.brandUpdateForm = this.formBuilder.group({
-      brandName: ['', Validators.required],
+  createColorUpdateForm() {
+    this.colorUpdateForm = this.formBuilder.group({
+      colorName: ['', Validators.required],
     });
   }
-  getBrand(id:Number){
-    this.brandService.getBrand(id).subscribe(response => {
-      this.brand = response.data
+  getColor(id:Number){
+    this.colorService.getColor(id).subscribe(response => {
+      this.color = response.data
       this.dataLoaded = true;
     })
   }
+
   update() {
-    if (this.brandUpdateForm.valid) {
-      let brandModel = Object.assign({id:this.brand.id}, this.brandUpdateForm.value);
-      console.log(brandModel);
-      this.brandService.update(brandModel).subscribe(
+    if (this.colorUpdateForm.valid) {
+      let ColorModel = Object.assign({id:this.color.id}, this.colorUpdateForm.value);
+      console.log(ColorModel);
+      this.colorService.update(ColorModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');
         },
