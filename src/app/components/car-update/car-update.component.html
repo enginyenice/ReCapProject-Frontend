@@ -1,1 +1,69 @@
-<p>car-update works!</p>
+<div class="content mt-2">
+    <div class="col-md-12" *ngIf="dataLoaded==true">
+      <div class="card">
+        <div class="card-header">Araç Düzenle</div>
+        <div class="card-body">
+          <form [formGroup]="carUpdateForm">
+           
+            <div class="form-group">
+              <label for="brandId">Marka Seçiniz</label>
+              <select
+                class="form-control"
+                id="brandId"
+                formControlName="brandId"
+              >
+                <option *ngFor="let item of brands" [ngValue]="item.id">{{item.brandName}}</option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+              <label for="colorId">Renk Seçiniz</label>
+              <select
+                class="form-control"
+                id="colorId"
+                formControlName="colorId"
+                
+              >
+                <option *ngFor="let item of colors" [ngValue]="item.id">{{item.colorName}}</option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+              <label for="brandName">Model Yılı</label>
+              <input
+                class="form-control"
+                type="number"
+                id="modelYear"
+                formControlName="modelYear"
+                placeholder="Model Yılı"
+              />
+            </div>
+            <div class="form-group">
+              <label for="dailyPrice">Günlük Kiralama Ücreti</label>
+              <input
+                class="form-control"
+                type="number"
+                id="dailyPrice"
+                formControlName="dailyPrice"
+                placeholder="Günlük Kiralama Ücreti"
+              />
+            </div>
+            <div class="form-group">
+              <label for="description">Açıklama</label>
+              <input
+                class="form-control"
+                type="text"
+                id="description"
+                formControlName="description"
+                placeholder="Açıklama"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-fill btn-success" (click)="update()">Düzenle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
