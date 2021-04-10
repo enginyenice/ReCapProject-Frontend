@@ -1,0 +1,27 @@
+<div class="text-center">
+    
+    <main class="form-signin">
+      <form [formGroup]="registerForm">
+        <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
+    
+        <div class="form-floating">
+            <input type="text" class="form-control" formControlName="firstName" id="floatingInput" placeholder="Engin">
+            <label for="floatingInput">Ad</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="lastName" id="floatingInput" placeholder="Yenice">
+            <label for="floatingInput">Soyad</label>
+          </div>
+        <div class="form-floating">
+          <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Eposta</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Şifre</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" (click)="register()">Kayıt Ol</button>
+      </form>
+    </main>
+    
+      </div>

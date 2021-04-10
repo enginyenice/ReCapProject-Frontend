@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-around" *ngIf="authStatus == false">
+  <a class="btn btn-outline-success btn-sm" routerLink="login">Giriş</a> &nbsp;
+  <a class="btn btn-outline-primary btn-sm" routerLink="register">Kayıt Ol</a>
+</div>
+<div class="d-flex justify-content-around ml-2" *ngIf="authStatus == true">
+  <ul class="navbar-nav mb-2 mb-lg-0">
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        {{ fullName }}
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li>
+          <a
+            class="dropdown-item"
+            [routerLink]="['/profile']"
+            routerLinkActive="router-link-active"
+            >Hesabım</a
+          >
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+            <button
+            class="dropdown-item text-danger"
+            (click)="logout()"
+            ><strong>Çıkış Yap</strong></button
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

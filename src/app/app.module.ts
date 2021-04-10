@@ -31,6 +31,9 @@ import { ColorUpdateComponent } from './components/color-update/color-update.com
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
+import { NavigationAuthComponent } from './components/navigation-auth/navigation-auth.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     BrandUpdateComponent,
     ColorUpdateComponent,
     CarUpdateComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    NavigationAuthComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+<div class="text-center">
+    
+    <main class="form-signin">
+      <form [formGroup]="profileForm">
+        <h1 class="h3 mb-3 fw-normal">Hesabım</h1>
+    
+        <div class="form-floating">
+            <input type="text" class="form-control" formControlName="firstName" id="floatingInput" placeholder="Engin">
+            <label for="floatingInput">Ad</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" formControlName="lastName" id="floatingInput" placeholder="Yenice">
+            <label for="floatingInput">Soyad</label>
+          </div>
+        <button class="w-100 btn btn-lg btn-primary" (click)="update()">Düzenle</button>
+      </form>
+    </main>
+    
+      </div>
