@@ -4,6 +4,20 @@
 ![Resimli Araç](https://i.imgyukle.com/2021/03/14/NsxAnS.png)
 ![Resimsiz Araç](https://i.imgyukle.com/2021/03/14/Nsx691.png)
 
+## 17.03.2021 Ödev 1
+
+RentACar Projenizde;
+
+Backend Custom Error Middleware ekleyip fluent validation için refactoring yapınız.
+
+Reactive Forms kullanarak Brand, Color, Car Ekleme sayfalarını oluşturunuz.
+
+Brand,Color,Car listesinde güncelleme butonu ekleyiniz. Tıklanan ilgili elemanın detay sayfasına yönlendirerek güncelleme imkanı veriniz.
+
+Toast desteği veriniz.
+
+Projenize ait github sayfanızı paylaşınız.
+
 ## 14.03.2021 Ödev 1
 
 RentACar projesinde;
